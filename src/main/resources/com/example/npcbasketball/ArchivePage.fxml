@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="288.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.npcbasketball.Controllers.ArchivePage">
+    <children>
+        <!-- Text field for entering the archive file name -->
+        <TextField fx:id="tfFileName" layoutX="161.0" layoutY="79.0" />
+
+        <!-- Label for the file name text field -->
+        <Label layoutX="98.0" layoutY="83.0" text="File Name:" />
+
+        <!-- Button for archiving data -->
+        <Button fx:id="btnArchiveData" layoutX="194.0" layoutY="201.0" mnemonicParsing="false" onAction="#onArchiveData" text="Archive Data" />
+
+        <!-- Radio buttons for choosing the file type (CSV, Serial, Database) -->
+        <RadioButton fx:id="rbCSV" layoutX="191.0" layoutY="110.0" mnemonicParsing="false" onAction="#onChooseFileType" text="CSV">
+            <toggleGroup>
+                <ToggleGroup fx:id="tgFileType" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="rbSERIAL" layoutX="191.0" layoutY="134.0" mnemonicParsing="false" onAction="#onChooseFileType" text="Serial" toggleGroup="$tgFileType" />
+        <RadioButton fx:id="rbDB" layoutX="191.0" layoutY="158.0" mnemonicParsing="false" onAction="#onChooseFileType" text="Database" toggleGroup="$tgFileType" />
+    </children>
+</AnchorPane>

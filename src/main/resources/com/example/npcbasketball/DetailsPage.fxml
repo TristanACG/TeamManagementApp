@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="200.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.npcbasketball.Controllers.DetailsPageController">
+    <VBox prefHeight="268.0" prefWidth="405.0">
+        <children>
+
+            <ComboBox fx:id="playerComboBox" onAction="#handlePlayerSelection" promptText="Select a player">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                    </FXCollections>
+                </items>
+                <VBox.margin>
+                    <Insets left="10.0" top="20.0" />
+                </VBox.margin>
+            </ComboBox>
+            <Label text="Filter:">
+                <VBox.margin>
+                    <Insets left="10.0" top="20.0" />
+                </VBox.margin></Label>
+            <TextField fx:id="tfFilter" onKeyTyped="#updateFilter" prefHeight="39.0" prefWidth="192.0">
+                <VBox.margin>
+                    <Insets left="15.0" right="10.0" />
+                </VBox.margin></TextField>
+        </children>
+    </VBox>
+    <Separator orientation="VERTICAL" prefHeight="200.0" scaleX="5.0" />
+    <VBox fx:id="focusedPlayer" prefHeight="698.0" prefWidth="200.0">
+        <children>
+            <Label fx:id="playerNameLabel">
+                <VBox.margin>
+                    <Insets left="20.0" top="20.0" />
+                </VBox.margin></Label>
+            <Label fx:id="playerNumberLabel">
+                <VBox.margin>
+                    <Insets left="20.0" top="20.0" />
+                </VBox.margin></Label>
+            <Label fx:id="playerPositionLabel">
+                <VBox.margin>
+                    <Insets left="20.0" top="20.0" />
+                </VBox.margin></Label>
+        </children>
+    </VBox>
+
+</HBox>
